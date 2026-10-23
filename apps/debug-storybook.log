@@ -1,0 +1,15 @@
+[19:32:34.578] [INFO] [36mInitializing Storybook[39m
+[19:32:34.824] [DEBUG] Getting package.json info for /Users/sophia/Documents/Estudos/nexora-monorepo/package.json...
+[19:32:34.824] [INFO] Package manager: pnpm
+[19:32:34.825] [DEBUG] Getting CLI versions from NPM for storybook...
+[19:32:34.825] [DEBUG] Executing command: pnpm info storybook version
+[19:32:35.811] [INFO] Adding Storybook version 10.6.3 to your project
+[19:32:35.811] [DEBUG] Executing command: pnpm config get minimumReleaseAge
+[19:32:35.946] [DEBUG] Using cached package.json for /Users/sophia/Documents/Estudos/nexora-monorepo/package.json...
+[19:32:35.946] [ERROR] Unable to initialize Storybook in this directory.
+
+Storybook couldn't detect a supported framework or configuration for your project. Make sure you're inside a framework project (e.g., React, Vue, Svelte, Angular, Next.js) and that its dependencies are installed.
+
+Tips:
+- Run init in an empty directory or create a new framework app first.
+- If this directory contains unrelated files, try a new directory for Storybook.
