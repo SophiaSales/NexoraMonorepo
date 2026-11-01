@@ -14,7 +14,8 @@
   "dependencies": {
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
-    "styled-components": "^6.6.0"
+    "styled-components": "^6.6.0",
+    "@sophiasales/nexora-button": "workspace:*"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "latest",
