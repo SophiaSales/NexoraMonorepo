@@ -8,64 +8,17 @@ interface StyledProps {
 }
 
 interface Palette {
-    text: string;
-    // primary [top, bottom] hex stops: default / hover / click
-    primary: [[string, string], [string, string], [string, string]];
-    // soft tints used by secondary and tertiary
-    soft: string;
-    softHover: string;
-    softClick: string;
-    ring: string;
-    shadow: string;
+    rgb: string;
 }
 
-const tint = ([top, bottom]: [string, string], alpha: number) => {
-    const rgb = (hex: string) =>
-        [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16)).join(', ');
-    return `linear-gradient(180deg, rgba(${rgb(top)}, ${alpha}) 0%, rgba(${rgb(bottom)}, ${alpha}) 100%)`;
+// base color of each button, as "r, g, b"; every state is derived from it
+const palettes: Record<ButtonColor, Palette> = {
+    pink: { rgb: '150, 88, 134' },
+    purple: { rgb: '93, 66, 121' },
+    blue: { rgb: '80, 111, 175' },
 };
 
-const palettes: Record<ButtonColor, Palette> = {
-    pink: {
-        text: '#8A1F5C',
-        primary: [
-            ['#F8C6DF', '#EFAACB'],
-            ['#FFC9EE', '#FFB0E3'],
-            ['#E8A3C4', '#DE8FB7'],
-        ],
-        soft: 'rgba(255, 240, 248, 0.8)',
-        softHover: 'rgba(252, 226, 240, 0.7)',
-        softClick: 'rgba(250, 214, 233, 0.9)',
-        ring: '#F2BEDA',
-        shadow: 'rgba(214, 116, 168, 0.35)',
-    },
-    purple: {
-        text: '#4B2A8F',
-        primary: [
-            ['#D9C8F2', '#C4AEE6'],
-            ['#E4CCFF', '#D4B4FF'],
-            ['#BBA2DD', '#AB8FD0'],
-        ],
-        soft: 'rgba(246, 240, 255, 0.8)',
-        softHover: 'rgba(234, 224, 250, 0.7)',
-        softClick: 'rgba(224, 210, 246, 0.9)',
-        ring: '#D3C2F0',
-        shadow: 'rgba(143, 108, 205, 0.35)',
-    },
-    blue: {
-        text: '#154A8F',
-        primary: [
-            ['#C4DCFB', '#A9CBF6'],
-            ['#BDE3FF', '#9FD3FF'],
-            ['#9DBEE8', '#87AEDE'],
-        ],
-        soft: 'rgba(238, 246, 255, 0.8)',
-        softHover: 'rgba(224, 237, 252, 0.7)',
-        softClick: 'rgba(210, 228, 250, 0.9)',
-        ring: '#B5D3F7',
-        shadow: 'rgba(95, 150, 220, 0.35)',
-    },
-};
+const a = (p: Palette, alpha: number) => `rgba(${p.rgb}, ${alpha})`;
 
 const sizes: Record<ButtonSize, ReturnType<typeof css>> = {
     xs: css`
@@ -104,30 +57,30 @@ const variantStyles = (variant: ButtonVariant, p: Palette) => {
     switch (variant) {
         case 'primary':
             return css`
-                background: ${sheen}, ${tint(p.primary[0], 0.7)};
-                box-shadow: ${glassRim}, 0 8px 20px -6px ${p.shadow}, 0 2px 6px rgba(0, 0, 0, 0.06);
+                background: ${sheen}, ${a(p, 0.3)};
+                box-shadow: ${glassRim}, 0 8px 20px -6px ${a(p, 0.35)}, 0 2px 6px rgba(0, 0, 0, 0.06);
 
                 &:hover:not(:disabled) {
-                    background: ${sheen}, ${tint(p.primary[1], 0.78)};
+                    background: ${sheen}, ${a(p, 0.4)};
                 }
 
                 &:active:not(:disabled) {
-                    background: ${tint(p.primary[2], 0.82)};
-                    box-shadow: inset 0 2px 6px ${p.shadow}, inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+                    background: ${a(p, 0.5)};
+                    box-shadow: inset 0 2px 6px ${a(p, 0.4)}, inset 0 0 0 1px rgba(255, 255, 255, 0.4);
                 }
             `;
         case 'secondary':
             return css`
-                background: ${sheen}, ${p.soft};
-                box-shadow: ${glassRim}, 0 6px 16px -6px ${p.shadow}, 0 1px 4px rgba(0, 0, 0, 0.04);
+                background: ${sheen}, ${a(p, 0.12)};
+                box-shadow: ${glassRim}, 0 6px 16px -6px ${a(p, 0.25)}, 0 1px 4px rgba(0, 0, 0, 0.04);
 
                 &:hover:not(:disabled) {
-                    background: ${sheen}, ${p.softHover};
+                    background: ${sheen}, ${a(p, 0.2)};
                 }
 
                 &:active:not(:disabled) {
-                    background: ${p.softClick};
-                    box-shadow: inset 0 2px 5px ${p.shadow}, inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+                    background: ${a(p, 0.28)};
+                    box-shadow: inset 0 2px 5px ${a(p, 0.3)}, inset 0 0 0 1px rgba(255, 255, 255, 0.4);
                 }
             `;
         case 'tertiary':
@@ -137,15 +90,15 @@ const variantStyles = (variant: ButtonVariant, p: Palette) => {
                 box-shadow: none;
 
                 &:hover:not(:disabled) {
-                    background: ${sheen}, ${p.softHover};
+                    background: ${sheen}, ${a(p, 0.14)};
                     backdrop-filter: blur(14px) saturate(180%);
                     box-shadow: ${glassRim};
                 }
 
                 &:active:not(:disabled) {
-                    background: ${p.softClick};
+                    background: ${a(p, 0.24)};
                     backdrop-filter: blur(14px) saturate(180%);
-                    box-shadow: inset 0 2px 5px ${p.shadow};
+                    box-shadow: inset 0 2px 5px ${a(p, 0.3)};
                 }
             `;
     }
@@ -160,7 +113,7 @@ export const StyledButton = styled.button<StyledProps>`
     border-radius: 999px;
     font-family: 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
     font-weight: 500;
-    color: ${({ $color }: StyledProps) => palettes[$color].text};
+    color: ${({ $color }: StyledProps) => `rgb(${palettes[$color].rgb})`};
     cursor: pointer;
     outline: none;
     -webkit-backdrop-filter: blur(14px) saturate(180%);
@@ -176,7 +129,7 @@ export const StyledButton = styled.button<StyledProps>`
 
     &:focus-visible {
         box-shadow: ${glassRim}, 0 0 0 3px rgba(255, 255, 255, 0.9),
-            0 0 0 6px ${({ $color }: StyledProps) => palettes[$color].ring};
+            0 0 0 6px ${({ $color }: StyledProps) => a(palettes[$color], 0.45)};
     }
 
     &:disabled {
