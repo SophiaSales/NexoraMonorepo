@@ -23,6 +23,9 @@ importers:
       '@sophiasales/nexora-button':
         specifier: ^0.2.0
         version: 0.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
+      '@sophiasales/nexora-form-controls':
+        specifier: ^0.1.0
+        version: 0.1.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
       isbot:
         specifier: ^5.1.36
         version: 5.2.2
@@ -189,6 +192,10 @@ importers:
         version: 5.9.3
 
   packages/nexora-form-controls:
+    dependencies:
+      '@sophiasales/nexora-form-controls':
+        specifier: ^0.1.0
+        version: 0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.29.7)(react-dom@18.3.1(react@18.3.1))(react-is@17.0.2)(react@18.3.1))
     devDependencies:
       '@types/react':
         specifier: ^18.0.0
@@ -1036,6 +1043,13 @@ packages:
 
   '@sophiasales/nexora-button@0.2.0':
     resolution: {integrity: sha512-lujXX7/hu/35HbQCIgKWZPS0bEbkyiTuD4AXH+dnCX0jahIEZRPeWFiGpbnjAXAWvxWZJTlsncMyW9fy2GmG7w==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+      styled-components: ^5.0.0 || ^6.0.0
+
+  '@sophiasales/nexora-form-controls@0.1.0':
+    resolution: {integrity: sha512-z3UM+yk3a42FqSJHPs6MRyWbuJk+jlRCsvDTossYax3GEimrd+s1ZUvukS7NCj1g8X+twzj5O/XooA6/ZBdZag==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
@@ -3777,6 +3791,18 @@ snapshots:
       rollup: 2.80.0
 
   '@sophiasales/nexora-button@0.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))':
+    dependencies:
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
+      styled-components: 6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+
+  '@sophiasales/nexora-form-controls@0.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(styled-components@5.3.11(@babel/core@7.29.7)(react-dom@18.3.1(react@18.3.1))(react-is@17.0.2)(react@18.3.1))':
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      styled-components: 5.3.11(@babel/core@7.29.7)(react-dom@18.3.1(react@18.3.1))(react-is@17.0.2)(react@18.3.1)
+
+  '@sophiasales/nexora-form-controls@0.1.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))':
     dependencies:
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)

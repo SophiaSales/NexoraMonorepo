@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [tailwindcss(), reactRouter()],
   ssr: {
-    noExternal: ["styled-components", "@sophiasales/nexora-button"],
+    noExternal: ["styled-components", "@sophiasales/nexora-button", "@sophiasales/nexora-form-controls"],
   },
   resolve: {
     dedupe: ["react", "react-dom", "styled-components"],

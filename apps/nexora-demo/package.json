@@ -12,6 +12,7 @@
     "@react-router/node": "^8.5.1",
     "@react-router/serve": "^8.5.1",
     "@sophiasales/nexora-button": "^0.2.0",
+    "@sophiasales/nexora-form-controls": "^0.1.0",
     "isbot": "^5.1.36",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",

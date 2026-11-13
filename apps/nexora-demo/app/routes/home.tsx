@@ -1,4 +1,5 @@
 import { Button } from "@sophiasales/nexora-button";
+import { Checkbox, Radio } from "@sophiasales/nexora-form-controls";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
@@ -55,6 +56,20 @@ export default function Home() {
             <Button color={color} onClick={() => alert(`clicou: ${color}`)}>
               Click me
             </Button>
+          </div>
+
+          <div style={row}>
+            <Checkbox color={color} label="Marcado" defaultChecked />
+            <Checkbox color={color} label="Desmarcado" />
+            <Checkbox color={color} label="Desabilitado" disabled />
+            <Checkbox color={color} label="Desabilitado marcado" disabled defaultChecked />
+          </div>
+
+          <div style={row}>
+            <Radio color={color} name={`radio-${color}`} label="Opção A" defaultChecked />
+            <Radio color={color} name={`radio-${color}`} label="Opção B" />
+            <Radio color={color} name={`radio-${color}`} label="Opção C" />
+            <Radio color={color} name={`radio-off-${color}`} label="Desabilitado" disabled />
           </div>
         </section>
       ))}

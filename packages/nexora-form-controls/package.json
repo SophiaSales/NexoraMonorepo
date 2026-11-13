@@ -35,5 +35,8 @@
     },
     "publishConfig": {
         "access": "public"
+    },
+    "dependencies": {
+        "@sophiasales/nexora-form-controls": "^0.1.0"
     }
 }
