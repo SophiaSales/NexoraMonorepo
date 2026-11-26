@@ -21,8 +21,8 @@ importers:
         specifier: ^8.5.1
         version: 8.5.1(react-router@8.5.1(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))(typescript@5.9.3)
       '@sophiasales/nexora-button':
-        specifier: ^0.2.0
-        version: 0.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
+        specifier: ^0.2.2
+        version: 0.2.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
       '@sophiasales/nexora-form-controls':
         specifier: ^0.1.0
         version: 0.1.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
@@ -1041,8 +1041,8 @@ packages:
       rollup:
         optional: true
 
-  '@sophiasales/nexora-button@0.2.0':
-    resolution: {integrity: sha512-lujXX7/hu/35HbQCIgKWZPS0bEbkyiTuD4AXH+dnCX0jahIEZRPeWFiGpbnjAXAWvxWZJTlsncMyW9fy2GmG7w==}
+  '@sophiasales/nexora-button@0.2.2':
+    resolution: {integrity: sha512-fMLMkZ0TKFqv97/P57eg4XFNPMvBwHvhpUQpLQw7jAxIK3G7fj6PZZZsrYbloGSRIslv8jy3SulEBWnOHFtgsw==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
@@ -3790,7 +3790,7 @@ snapshots:
     optionalDependencies:
       rollup: 2.80.0
 
-  '@sophiasales/nexora-button@0.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))':
+  '@sophiasales/nexora-button@0.2.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))':
     dependencies:
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
