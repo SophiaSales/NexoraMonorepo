@@ -1,5 +1,5 @@
 import { Button } from "@sophiasales/nexora-button";
-import { Checkbox, Radio } from "@sophiasales/nexora-form-controls";
+import { Checkbox, Radio, Switch } from "@sophiasales/nexora-form-controls";
 import type { Route } from "./+types/home";
 
 export function meta({}: Route.MetaArgs) {
@@ -9,6 +9,21 @@ export function meta({}: Route.MetaArgs) {
 const colors = ["pink", "purple", "blue"] as const;
 const variants = ["primary", "secondary", "tertiary"] as const;
 const sizes = ["xs", "sm", "md", "lg"] as const;
+
+const Sun = (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+  </svg>
+);
+
+const Moon = (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+  </svg>
+);
 
 const row = { display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" } as const;
 
@@ -70,6 +85,14 @@ export default function Home() {
             <Radio color={color} name={`radio-${color}`} label="Opção B" />
             <Radio color={color} name={`radio-${color}`} label="Opção C" />
             <Radio color={color} name={`radio-off-${color}`} label="Desabilitado" disabled />
+          </div>
+
+          <div style={row}>
+            <Switch color={color} label="Ligado" defaultChecked />
+            <Switch color={color} label="Desligado" />
+            <Switch color={color} label="Desabilitado" disabled />
+            <Switch color={color} label="Desabilitado ligado" disabled defaultChecked />
+            <Switch color={color} label="Claro / escuro" iconOff={Sun} iconOn={Moon} />
           </div>
         </section>
       ))}
