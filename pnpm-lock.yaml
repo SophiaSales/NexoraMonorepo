@@ -24,8 +24,8 @@ importers:
         specifier: ^0.2.2
         version: 0.2.2(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
       '@sophiasales/nexora-form-controls':
-        specifier: ^0.1.0
-        version: 0.1.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
+        specifier: ^0.2.0
+        version: 0.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
       isbot:
         specifier: ^5.1.36
         version: 5.2.2
@@ -1050,6 +1050,13 @@ packages:
 
   '@sophiasales/nexora-form-controls@0.1.0':
     resolution: {integrity: sha512-z3UM+yk3a42FqSJHPs6MRyWbuJk+jlRCsvDTossYax3GEimrd+s1ZUvukS7NCj1g8X+twzj5O/XooA6/ZBdZag==}
+    peerDependencies:
+      react: ^17.0.0 || ^18.0.0
+      react-dom: ^17.0.0 || ^18.0.0
+      styled-components: ^5.0.0 || ^6.0.0
+
+  '@sophiasales/nexora-form-controls@0.2.0':
+    resolution: {integrity: sha512-l7iYzNsNvWR7735C+cif5sh5Zo77X3/E/1W2xfulA26K2VYQHHrBwbFFz7Rv1WlC5VkXe2CJ2ri+fr8cDSvD5w==}
     peerDependencies:
       react: ^17.0.0 || ^18.0.0
       react-dom: ^17.0.0 || ^18.0.0
@@ -3804,6 +3811,13 @@ snapshots:
 
   '@sophiasales/nexora-form-controls@0.1.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))':
     dependencies:
+      react: 19.3.1
+      react-dom: 19.3.1(react@19.3.1)
+      styled-components: 6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+
+  '@sophiasales/nexora-form-controls@0.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))':
+    dependencies:
+      '@sophiasales/nexora-form-controls': 0.1.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(styled-components@6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1))
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
       styled-components: 6.6.0(css-to-react-native@3.2.0)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
